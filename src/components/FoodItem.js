@@ -2,23 +2,23 @@
 
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
+import tw from 'twrnc';
 
 const FoodItem = ({ item, onAddToCart }) => {
   return (
-    <View className="flex-row border-b border-gray-200 p-4">
+    <View style={tw`flex-row border-b border-gray-200 p-4`}>
       <Image
         source={{ uri: item.imageUrl }}
-        className="rounded-lg"
-        style={{ width: 200, height: 200 }}
+        style={tw`rounded-lg w-24 h-24`}
       />
-      <View className="ml-4 flex-1">
-        <Text className="text-lg font-bold">{item.name}</Text>
-        <Text className="my-1 text-gray-600">{item.description}</Text>
-        <Text className="text-base font-bold text-green-500">${item.price.toFixed(2)}</Text>
+      <View style={tw`ml-4 flex-1`}>
+        <Text style={tw`text-lg font-bold`}>{item.name}</Text>
+        <Text style={tw`my-1 text-gray-600`}>{item.description}</Text>
+        <Text style={tw`text-base font-bold text-green-500`}>${item.price.toFixed(2)}</Text>
         <TouchableOpacity
-          className="mt-2 items-center rounded bg-green-500 px-4 py-2"
+          style={tw`mt-2 items-center rounded bg-green-500 px-4 py-2`}
           onPress={onAddToCart}>
-          <Text className="font-bold text-white">Add to Cart</Text>
+          <Text style={tw`font-bold text-white`}>Add to Cart</Text>
         </TouchableOpacity>
       </View>
     </View>
