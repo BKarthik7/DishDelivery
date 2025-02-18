@@ -12,6 +12,7 @@ web-build/
 
 
 nativewind-env.d.ts
+src/firebase/config.ts
 
 
 ios
